@@ -1,0 +1,60 @@
+<h2>Pipes</h2>
+
+<div>
+    <h4>{{producto.titulo }}</h4>
+    <p>{{producto.descripcion}}</p>
+    <div>
+        <span>{{producto.precio | doble:1500 }}</span>
+        <span>{{producto.fechaLanzamiento}}</span>
+    </div>
+</div>
+
+<br><br>
+
+<div>
+    <h4>{{producto.titulo | titlecase}}</h4>
+    <p>{{producto.descripcion | slice:0:150}}...</p>
+    <div>
+        <span>{{producto.precio | doble:350 | currency:'EUR' }}</span>
+        <span>{{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</span>
+    </div>
+</div>
+
+
+
+<pre>{{ producto | json }}</pre>
+<div>{{ {a: 1, b:2} | keyvalue | json }}</div>
+
+
+<br><br>
+
+<input type="text" name="" id="" (change)="addTarea($event)" placeholder="Inserta tarea">
+<ul>
+    <li *ngFor="let tarea of tareas">{{tarea}}</li>
+</ul>
+
+
+<br><br>
+
+<input type="text" name="" id="" [(ngModel)]="filtroTxt" placeholder="Filtrar tarea">
+<ul>
+    <li *ngFor="let tarea of tareas | filtro:filtroTxt">{{tarea}}</li>
+</ul>
+
+
+<br><br>
+
+
+<h6>Ocultar las palabras</h6>
+<input type="text" name="" id="" [(ngModel)]="fraseOcultar">
+<p>{{fraseOcultar | ocultarPalabras:['no', 'si']}}</p>
+
+<h6>Revertir la frase</h6>
+<input type="text" name="" id="" [(ngModel)]="fraseRevertida">
+<p>{{fraseRevertida | reverse}}</p>
+
+
+<br><br>
+
+<h6>Peticion fetch asincrona</h6>
+<pre>{{datosPost1 | async | json}}</pre>

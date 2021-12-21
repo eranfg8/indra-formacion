@@ -1,0 +1,35 @@
+<h2>Data Binding</h2>
+
+<!-- Truthy: true, numero != 0, string != '' y resto de cosas -->
+<!-- Falsy: false, 0, '', null, undefined, NaN -->
+
+<h3>String Interpolation</h3>
+<p>Nombre: {{nombre}}</p>
+<p>Nombre: {{getNombre()}}</p>
+<p>Hola {{nombre2 ? nombre2 : "mundo"}}</p>
+
+
+
+<h3>Property Binding</h3>
+<input type="text" disabled = "deshabilitarInput" [placeholder]="nombre">
+<input type="text"  [placeholder]="getNombre()">
+<input type="text"  [placeholder]="nombre2 ? nombre2 : 'Introduce un nombre'">
+<img [src]="logo.urlLogo" alt="Logo de {{logo.nombre}}" width="150px">
+<img [src]="logo.urlLogo" [alt]="textoAlternativo" width="150px">
+<img [src]="logo.urlLogo" [alt]="'Logo de ${logo.nombre}'" width="150px">
+<img [src]="logo.urlLogo" [alt]="'Logo de' + logo.nombre" width="150px"> <!-- Para mi, la mejor -->
+<p [style.color]="'blue'">El texto es de color azul</p>  <!-- Si queremos usar propiedad (variable), usar solo unas comillas -->
+
+
+
+<h3>Event Binding</h3>
+<button type="button" (click)="cambiarNombre('Mike Kozinski', $event)">Cambiar nombre de Falco</button>
+
+
+<h3>Two way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">  <!-- Coge el valor de la variable y cambiar su valor -->
+
+
+<h3>Ejercicio: Simula el Two Way Data Binding</h3>  <!-- Que haga lo que hace el ngModel -->
+<input type="text" [value]="nombre" (keyup)="cambiarValor($event)">
+<input type="text" [value]="nombre" (input)="cambiarValor($event)">

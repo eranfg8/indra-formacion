@@ -1,0 +1,26 @@
+.div-header {
+    border-bottom: solid rgb(202, 202, 202) 1px;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.div-header .user-symbol {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 145, 0);
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+.div-header span button {
+    margin-right: 10px;
+}

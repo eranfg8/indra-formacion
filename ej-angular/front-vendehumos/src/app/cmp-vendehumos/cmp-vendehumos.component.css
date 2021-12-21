@@ -1,0 +1,30 @@
+.container {
+    background-color: rebeccapurple;
+    width: 50vw;
+    position: absolute;
+    margin: 15px;
+}
+
+select {
+    width: fit-content;
+    background-color: rgb(218, 218, 218);
+    margin: 10px 0 10px 0;
+}
+
+.div-box-vendehumos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+.div-box-vendehumos .info-vendehumos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-box-vendehumos .info-vendehumos img {
+    width: 100%;
+    margin-right: 10px;
+}

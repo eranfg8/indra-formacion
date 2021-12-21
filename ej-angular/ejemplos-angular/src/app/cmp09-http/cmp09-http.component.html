@@ -1,0 +1,26 @@
+<h2>Peticiones HTTP</h2>
+
+<form [formGroup]="formEditar" (ngSubmit)="actualizar()">
+    <div>
+        <label for="titulo">Titulo:</label>
+        <input type="text" formControlName="titulo" id="titulo">
+    </div>
+    <div>
+        <label for="completada">Completada:</label>
+        <input type="checkbox" formControlName="completada" id="completada">
+    </div>
+    <button type="submit" [disabled]="formEditar.invalid" class="btn btn-success">Actualizar</button>
+</form>
+
+
+<button type="button" (click)="guardar()" class="btn btn-primary">Crear tarea</button>
+
+
+<ul>
+    <li *ngFor="let tarea of listaTareas">
+        {{tarea.titulo}} ({{tarea.completada ? 'completada' : 'no completada'}})
+        <button type="button" class="btn btn-success" (click)="completar(tarea)">Hacer/Desahacer tarea</button>
+        <button type="button" class="btn btn-danger" (click)="eliminar(tarea.id!)">Eliminar tarea</button>
+        <button type="button" class="btn btn-warning" (click)="rellenarFormulario(tarea)">Editar tarea</button>
+    </li>
+</ul>

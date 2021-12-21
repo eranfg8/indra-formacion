@@ -1,0 +1,15 @@
+<video src="./assets/pexels-nikolai-lapshin-9724998.mp4" width="200" (timeupdate)="actualizarProgreso($event)" #video (loadedmetadata)="setDuration()"></video>
+
+<button type="button" (click)="play(video)">Play</button>
+<button type="button" (click)="pause(video)">Pause</button>
+<button type="button" (click)="replay(video)">Replay</button>
+
+<input type="range" min="0" max="100" (input)="cambiarVolumen(video, $event)" [value]=currentVolume>
+<button type="button" (click)="fullScreen(video)">Full screen</button>
+
+<button type="button" (click)="subirVolumen()">+ volumen</button>
+<button type="button" (click)="bajarVolumen()">- volumen</button>
+
+<progress [value]="currentTime" buffer="0.5" [max]="duration"></progress>
+
+<!-- <progress [value]="currentTime" buffer="0.5" [max]="getDuration(video)"></progress> -->

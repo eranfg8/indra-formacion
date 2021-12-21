@@ -1,0 +1,37 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "El niño murcielago reaparece en la playa",
+      "contenido": " Lorem ipsum dolor sit amet consectetur adipisicing elit.Facere",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "titulo": "El niño murcielago reaparece en la playa",
+      "contenido": " Lorem ipsum dolor sit amet consectetur adipisicing elit.Facere, deserunt sunt.Soluta voluptates expedita possimus eos et quidem officiis,",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "titulo": "Aumenta la venta de pitos y flautas",
+      "contenido": " Lorem ipsum dolor sit amet consectetur adipisicing elit.Facere, deserunt sunt.Soluta voluptates expedita possimus eos et quidem officiis,",
+      "authorId": 2
+    },
+    {
+      "titulo": "Prueba",
+      "contenido": "Esto es una prueba propia",
+      "id": 4
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "nombre": "Ángel"
+    },
+    {
+      "id": 2,
+      "nombre": "Sara"
+    }
+  ]
+}

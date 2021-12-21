@@ -1,0 +1,65 @@
+<h2>Directivas</h2>
+
+
+<h3>De atributo</h3>
+
+<p [ngStyle]="{color: colorLetra, backgroundColor: colorFondo}">El fondo es negro y la letra blanca</p>
+<p [ngClass]="{tachada: tachada, fondoNegro: true, letraBlanca: true}">El fondo es negro y la letra blanca</p>
+
+Color de la letra: <input type="color" name="" id="" [(ngModel)]="colorLetra">
+<br> Color del fondo: <input type="color" name="" id="" [(ngModel)]="colorFondo">
+
+<button type="button" (click)="toggleTachada()">Alternar texto tachado</button>
+
+<p appMarcar>El párrafo se marca si pasas el ratón por encima</p>
+<p [appMarcar]="colorFondo">El párrafo se marca si pasas el ratón por encima</p>
+<p appMarcar="blue">El párrafo se marca si pasas el ratón por encima</p>
+<p appMarcar="red">El párrafo se marca si pasas el ratón por encima</p>
+<!-- como no pasamos ningun valor, coge el que lo inicializa -->
+
+
+
+<br><br>
+
+
+<h3>Estructurales</h3>
+
+<div *ngIf="!logueado; then loginBtn else logoutBtn">LogIn</div>
+
+
+<!-- <ng-container *ngIf="!logueado; then loginBtn else logoutBtn">LogIn</ng-container> -->
+<!-- Tambien valdria con estas etiquetas -->
+
+<ng-template #loginBtn>
+    <button type="button" (click)="cambiarLogueado(true)">LogIn</button>
+</ng-template>
+
+<ng-template #logoutBtn>
+    <button type="button" (click)="cambiarLogueado(false)">LogOut</button>
+</ng-template>
+
+<ul>
+    <li *ngFor="let mascota of mascotas; let pos = index; let ultimo = last; let primer = first">
+        {{pos+1}} -- {{mascota}} -- {{primer ? 'Es el primero': ''}} {{ultimo ? 'Es el ultimo' : ''}}
+        <!-- Dos formas de hacerlo -->
+    </li>
+</ul>
+
+
+<input type="text" name="" id="" [(ngModel)]="mascotaSeleccionada">
+
+<div [ngSwitch]="mascotaSeleccionada">
+    <!--  <p *ngSwitchCase="'Perro'">Tengo un perro</p>
+    <p *ngSwitchCase="'Gato'">Tengo un gato</p>
+    <p *ngSwitchCase="'Canario'">Tengo un canario</p>
+    -->
+
+    <ng-container *ngFor="let mascota of mascotas">
+        <p *ngSwitchCase="mascota">Tengo un {{mascota}} </p>
+    </ng-container>
+    <p *ngSwitchDefault>No tengo ninguna de esas mascota</p>
+</div>
+
+
+<!-- Mover el input y cambiar las letras de color de forma aleatoria -->
+<input type="text" appPowerMode>
